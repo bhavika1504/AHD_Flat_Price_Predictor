@@ -8,9 +8,9 @@ app = Flask(__name__)
 CORS(app)
 
 
-model = pickle.load(open("../model/Ahmedabad_flats_price_model.pkl", "rb"))
+model = pickle.load(open("model/Ahmedabad_flats_price_model.pkl", "rb"))
 
-with open("../model/model_columns.json", "r") as f:
+with open("model/model_columns.json", "r") as f:
     columns = json.load(f)
 
 def prepare_input(area, bhk, location):
