@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ahmedabad House Price Predictor</title>
+</head>
+
+<body>
+
+    <h2>Ahmedabad House Price Predictor</h2>
+
+    <label>Area (sqft):</label>
+    <input id="area"><br><br>
+
+    <label>BHK:</label>
+    <input id="bhk"><br><br>
+
+    <label>Location:</label>
+    <input id="location"><br><br>
+
+    <button onclick="predict()">Predict Price</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function predict() {
+            fetch("https://ahd-flat-price-predictor.onrender.com/predict", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    area: document.getElementById("area").value,
+                    bhk: document.getElementById("bhk").value,
+                    location: document.getElementById("location").value
+                })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById("result").innerText =
+                        "Predicted Price: ₹ " + data.predicted_price.toLocaleString();
+                });
+        }
+    </script>
+
+</body>
+
+</html>
