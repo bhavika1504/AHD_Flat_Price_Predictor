@@ -26,7 +26,7 @@ const Dashboard = () => {
     if (loading) return (
         <div className="loading">
             <p>Gathering market data...</p>
-            <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Server is waking up (Free tier takes ~1 min if idle)</span>
+
         </div>
     );
 
