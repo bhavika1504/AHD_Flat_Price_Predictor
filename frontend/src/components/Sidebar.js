@@ -1,5 +1,5 @@
 import React from 'react';
-import { Home, BarChart2, Layout, Database, Info } from 'lucide-react';
+import { Home, BarChart2, Layout, Info } from 'lucide-react';
 
 const Sidebar = ({ activeTab, setActiveTab, isOpen }) => {
     const menuItems = [

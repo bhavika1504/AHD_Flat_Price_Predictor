@@ -3,7 +3,7 @@ import './App.css';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import PredictionForm from './components/PredictionForm';
-import { Search, User, Bell, Menu, X } from 'lucide-react';
+import { Search, Menu, X } from 'lucide-react';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
