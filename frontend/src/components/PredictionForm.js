@@ -54,7 +54,12 @@ const PredictionForm = () => {
             });
             setPrice(res.data.predicted_price);
         } catch (err) {
-            setError('Error predicting price. Ensure backend is running.');
+            setPrice(null);
+            if (err.response && err.response.data && err.response.data.error) {
+                setError(err.response.data.error);
+            } else {
+                setError('Error predicting price. Ensure backend is running.');
+            }
         } finally {
             setLoading(false);
         }

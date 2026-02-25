@@ -32,11 +32,17 @@ def predict():
     area = float(data["area"])
     bhk = int(data["bhk"])
     location = data["location"]
-    
+
+    # sanity check
+    if area / bhk < 250:
+        return jsonify({
+            "error": "Invalid input: area too small for given BHK"
+        }), 400
+
     X = prepare_input(area, bhk, location)
     log_price = model.predict(X)[0]
     price = np.expm1(log_price)
-
+    
     return jsonify({"predicted_price": round(price, 2)})
 
 @app.route("/api/locations", methods=["GET"])
