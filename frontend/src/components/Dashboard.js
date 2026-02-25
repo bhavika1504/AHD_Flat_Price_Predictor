@@ -23,7 +23,12 @@ const Dashboard = () => {
         fetchAnalytics();
     }, []);
 
-    if (loading) return <div className="loading">Gathering market data...</div>;
+    if (loading) return (
+        <div className="loading">
+            <p>Gathering market data...</p>
+            <span style={{ fontSize: '0.9rem', opacity: 0.7 }}>Server is waking up (Free tier takes ~1 min if idle)</span>
+        </div>
+    );
 
     const COLORS = ['#457367', '#B08E6F', '#764137', '#64748b', '#2c3e50'];
 

@@ -1,3 +1,4 @@
+import os
 import json
 import pickle
 import numpy as np
@@ -6,6 +7,10 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+
+@app.route("/", methods=["GET"])
+def index():
+    return "Server is up and running!"
 
 
 model = pickle.load(open("model/Ahmedabad_flats_price_model.pkl", "rb"))
