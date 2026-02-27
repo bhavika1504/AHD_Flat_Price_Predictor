@@ -6,7 +6,7 @@ A modern, full-stack web application designed to predict residential property pr
 
 ## 🌟 Overview
 
-The **Ahmedabad Flat Price Predictor** leverages a Linear Regression model trained on real-world housing data from Ahmedabad. It provides users with an intuitive interface to estimate property values based on key parameters like location, area (sqft), and number of bedrooms (BHK).
+The **Ahmedabad Flat Price Predictor** leverages a **Ridge Regression** model trained on a fresh **2024-25 residential dataset** from Ahmedabad. By incorporating L2 regularization (Ridge) and a production-ready scaling pipeline, the application provides robust and accurate property value estimates based on key parameters like location, area (sqft), and number of bedrooms (BHK).
 
 ### Why use this?
 - **Data-Driven**: Predictions are backed by algorithmic analysis.
@@ -37,7 +37,7 @@ The **Ahmedabad Flat Price Predictor** leverages a Linear Regression model train
 
 ### Backend
 - **Framework**: [Flask](https://flask.palletsprojects.com/) (Python)
-- **Engine**: [Scikit-Learn](https://scikit-learn.org/) (Linear Regression)
+- **Engine**: [Scikit-Learn](https://scikit-learn.org/) (**Ridge Regression** with `StandardScaler` Pipeline)
 - **Data Handling**: NumPy, Pandas
 - **Serialization**: Pickle
 - **CORS**: Flask-CORS for secure frontend-backend communication
